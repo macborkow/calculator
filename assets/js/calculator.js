@@ -109,7 +109,7 @@ function append(number) {
 }
 
 function putDot() {
-	if(screenValue.nodeValue.length < 10 && dotUsed == false) {
+	if(screenValue.nodeValue.length < 10 && dotUsed == false && !waitingForInput) {
 		screenValue.nodeValue += ".";
 		dotUsed = true;
 	}
@@ -122,11 +122,11 @@ function operate() {
 		let result = 0;
 		switch(currentOperation) {
 			case "+": 
-				result = intStored+intScreen;
+				result = (intStored+intScreen).toFixed(2);
 				screenValue.nodeValue = result.toString();
 				break; 
 			case "-": 
-				result = intStored-intScreen;
+				result = (intStored-intScreen).toFixed(2);
 				screenValue.nodeValue = result.toString();
 				break;
 			case "*":
@@ -134,8 +134,12 @@ function operate() {
 				screenValue.nodeValue = result.toString();
 				break;
 			case "/": 
-				result = parseFloat(intStored/intScreen).toFixed(2);
-				screenValue.nodeValue = result.toString();
+				if(intScreen == 0) {
+					screenValue.nodeValue = "boom!";
+				} else {
+					result = parseFloat(intStored/intScreen).toFixed(2);
+					screenValue.nodeValue = result.toString();
+				}
 				break;
 		}
 		
