@@ -1,5 +1,5 @@
 #calculator {
-	border: solid black 3px;
+	border: dotted gray 3px;
 	width: calc(3px + 30vw);
 	height: calc(3px + 60vh);
 	display: flex;
@@ -23,7 +23,7 @@
 	letter-spacing: calc(1px + 0.75vw);
 	line-height: 110%;
 	padding-right: 5px;
-	border-bottom: solid black 3px;
+	border-bottom: dotted gray 3px;
 }
 
 #digits {
@@ -31,7 +31,7 @@
 	height: calc(-3px + 75%);
 	display: flex;
 	flex-flow: row wrap;
-	border-right: solid black 3px;
+	border-right: dotted gray 3px;
 }
 
 #operations {
@@ -39,12 +39,12 @@
 	height: calc(-3px + 75%);
 	background-color: white;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 }
 
 .button {
 	width: calc(100%/3);
-	height: calc(100%/3);
+	height: calc(100%/4);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -55,6 +55,11 @@
 
 .opbutton {
 	width: calc(100%/2);
+	height: calc(100%/4);
+}
+
+.zerobutton {
+	width: calc(100%);
 }
 
 .button:hover {
