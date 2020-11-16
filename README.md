@@ -1,2 +1,2 @@
 ## calculator
-Calculator for The Odin Project.
+Calculator for [The Odin Project](https://www.theodinproject.com/).
